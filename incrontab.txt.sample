@@ -1,0 +1,21 @@
+# both "#" and ";" are comments
+# all commands are suffixed with
+#  Keywords:
+#  $path = directory path
+#  $name = filename
+#  $file = filename
+#  $event_name = the name of the event. e.g. IN_MODIFY
+#  (broken) $mask = the bitmask that is beling listened for (not the triggered one)
+#  (broken) $cookie = an id used when moving files form/to
+#  $is_dir = true if a dir, else false
+#  $wd = the id of the watcher
+
+
+#[/home/user/bin/scpdownload/releases]
+#IN_CLOSE_WRITE = /home/user/bin/scpdownload/master.sh $path/$name
+
+#[/mnt/torrents]
+#IN_DELETE = /mnt/bin/dbtorrent/delrelease.sh $path/$name
+#IN_CLOSE_WRITE = /mnt/bin/dbtorrent/addtorr.sh $path/$name
+
+
