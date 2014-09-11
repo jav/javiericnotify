@@ -8,6 +8,7 @@ from pyinotify import ThreadedNotifier
 from pyinotify import EventsCodes
 from pyinotify import ProcessEvent
 from pyinotify import WatchManager
+import pyinotify
 
 from optparse import OptionParser
 
@@ -174,7 +175,7 @@ for watchdir in watches.keys() :
     print "Adding manager for %s" % watchdir
     for evcode in watches[watchdir].keys() :
         print "Adding events for %s" % evcode
-	exec("mask |= EventsCodes." + evcode)
+	exec("mask |= pyinotify." + evcode)
 
         for s in watches[watchdir][evcode] :
             cmd = "managers[watchdir].list_" + evcode + ".append(\"" + s.replace("\"", "\\\"") + "\")"
